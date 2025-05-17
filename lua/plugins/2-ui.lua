@@ -2,8 +2,7 @@
 -- Plugins that make the user interface better.
 
 --    Sections:
---       -> tokyonight                  [theme]
---       -> astrotheme                  [theme]
+--       -> monokai-pro                 [theme]
 --       -> alpha-nvim                  [greeter]
 --       -> nvim-notify                 [notifications]
 --       -> mini.indentscope            [guides]
@@ -26,28 +25,16 @@ local is_android = vim.fn.isdirectory('/data') == 1 -- true if on android
 
 return {
 
-  --  tokyonight [theme]
-  --  https://github.com/folke/tokyonight.nvim
+  -- https://github.com/loctvl842/monokai-pro.nvim
   {
-    "folke/tokyonight.nvim",
+    "loctvl842/monokai-pro.nvim",
     event = "User LoadColorSchemes",
     opts = {
-      dim_inactive = false,
       styles = {
-        comments = { italic = true },
-        keywords = { italic = true },
+        comment = { italic = true },
+        keyword = { italic = true }, -- any other keyword
+        type = { italic = true }, -- (preferred) int, long, char, etc
       },
-    }
-  },
-
-  --  astrotheme [theme]
-  --  https://github.com/AstroNvim/astrotheme
-  {
-    "AstroNvim/astrotheme",
-    event = "User LoadColorSchemes",
-    opts = {
-      palette = "astrodark",
-      plugins = { ["dashboard-nvim"] = true },
     },
   },
 
